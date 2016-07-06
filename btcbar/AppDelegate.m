@@ -27,13 +27,8 @@
 
     // Pass each ticker object into a dictionary, get first updates
     tickers = [NSMutableArray arrayWithObjects:
-               [[BitFinexUSDFetcher alloc] init],
-               [[BitStampUSDFetcher alloc] init],
-               [[BTCeUSDFetcher alloc] init],
-               [[CoinbaseUSDFetcher alloc] init],
+               [[OkcoinRMBFetcher alloc] init],
                [[HuobiUSDFetcher alloc] init],
-               [[OKCoinUSDFetcher alloc] init],
-               [[WinkDexUSDFetcher alloc] init],
                nil];
 
     // If ticker preference does not exist, default to 0
