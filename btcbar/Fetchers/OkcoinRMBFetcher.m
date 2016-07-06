@@ -15,10 +15,10 @@
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"OKCoinUSD";
+        self.ticker_menu = @"OKCoinRMB";
         
         // Website location
-        self.url = @"https://www.okcoin.cn/";
+        self.url = @"https://www.okcoin.cn/market.do";
         
         // Immediately request first update
         [self requestUpdate];
@@ -43,7 +43,7 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.okcoin.cn/api/v1/ticker.do?symbol=btc_cny"]];
     
     // Set the request's user agent
-    [request addValue:@"btcbar/2.0 (OKCoinUSDFetcher)" forHTTPHeaderField:@"User-Agent"];
+    [request addValue:@"btcbar/2.0 (OkcoinRMBFetcher)" forHTTPHeaderField:@"User-Agent"];
     
     // Initialize a connection from our request
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -90,7 +90,7 @@
         if(resultsStatus)
         {
             NSNumberFormatter *currencyStyle = [[NSNumberFormatter alloc] init];
-            currencyStyle.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+            currencyStyle.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh-CN"];
             currencyStyle.numberStyle = NSNumberFormatterCurrencyStyle;
             
             self.error = nil;
